@@ -52,6 +52,12 @@ class Comment
 end
 ```
 
+Get user unread count:
+
+```rb
+count = Notification.unread_count(current_user)
+```
+
 ### Write your custom Notification partial view for notify_types:
 
 TODO...

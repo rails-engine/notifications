@@ -8,6 +8,28 @@
 </head>
 <body>
 
+  <nav class="navbar navbar-light">
+    <div class="container">
+      <a class="navbar-brand" href="/">Notifications Dummy</a>
+      <ul class="nav navbar-nav">
+        <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="/topics" class="nav-link">Topics</a></li>
+        <li class="nav-item"><a href="/comments" class="nav-link">Comments</a></li>
+        <li class="nav-item"><a href="<%= notifications.notifications_path %>" class="nav-link">Notifications <span class="label label-success"><%= Notification.unread_count(current_user) %></span></a></li>
+      </ul>
+
+      <nav class="pull-xs-right nav navbar-nav">
+        <% if current_user %>
+        Hello, <%= current_user.name %>
+        <a href="<%= main_app.destroy_user_session_path %>" data-method="DELETE" class="btn btn-sm btn-warning-outline">Sign out</a>
+        <% else %>
+          <a href="<%= main_app.new_user_registration_path %>" class="btn btn-sm btn-danger-outline">Sign up</a>
+          <a href="<%= main_app.new_user_session_path %>" class="btn btn-sm btn-primary-outline">Sign in</a>
+        <% end %>
+      </nav>
+    </div>
+  </nav>
+
   <div class="container">
     <%= yield %>
   </div>

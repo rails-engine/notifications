@@ -11,17 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :topic_id %>
-    <%= f.select :topic_id, Topic.all.collect{|t| [t.title, t.id]} %>
+  <div class="form-group">
+    <%= f.label :topic_id, class: 'control-label' %>
+    <%= f.select :topic_id, Topic.all.collect{|t| [t.title, t.id]}, {}, { class: 'form-control' } %>
   </div>
 
-  <div class="field">
-    <%= f.label :body %>
-    <%= f.text_area :body %>
+  <div class="form-group">
+    <%= f.label :body, class: 'control-label' %>
+    <%= f.text_area :body, class: 'form-control' %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'btn btn-primary' %>
   </div>
 <% end %>

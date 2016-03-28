@@ -54,6 +54,13 @@ class NotificationTest < ActiveSupport::TestCase
 
     note = create(:notification)
     assert_equal "/users/#{note.actor_id}", note.actor_profile_url
+  end
 
+  test '#unread_count' do
+    user = create(:user)
+    create(:notification)
+    read_notes = create_list(:notification, 2, user: user, read_at: Time.now)
+    notes = create_list(:notification, 3, user: user)
+    assert_equal 3, Notification.unread_count(user)
   end
 end

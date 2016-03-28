@@ -1,3 +1,16 @@
-Welcome to Dummy App.
+<div style="margin: 20px">
+  <p>Welcome to Dummy App.</p>
 
-<a href="<%= notifications.notifications_path %>" class="btn btn-success btn-lg">Notifications</a>
+  <ol class="list-group">
+    <li class="list-group-item">
+      <a href="<%= new_topic_path %>">Create A Topic</a>
+    </li>
+    <li class="list-group-item">
+      <a href="<%= new_comment_path %>">Create a little Comment</a>
+    </li>
+    <li class="list-group-item">
+      <a href="<%= notifications.notifications_path %>" >Notifications</a>
+    </li>
+  </ol>
+
+</div>

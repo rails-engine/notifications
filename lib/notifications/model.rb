@@ -40,6 +40,10 @@ module Notifications
         return if ids.blank?
         Notification.where(id: ids).update_all(read_at: Time.now)
       end
+
+      def unread_count(user)
+        Notification.where(user: user).unread.count
+      end
     end
   end
 end
