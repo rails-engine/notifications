@@ -45,7 +45,12 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (7.0.0)
+    autoprefixer-rails (6.3.5)
+      execjs
     bcrypt (3.1.11)
+    bootstrap (4.0.0.alpha3)
+      autoprefixer-rails (>= 6.0.3)
+      sass (>= 3.4.19)
     builder (3.2.2)
     codecov (0.1.4)
       json
@@ -164,6 +169,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap (= 4.0.0.alpha3)
   codecov
   coffee-rails
   devise (= 4.0.0.rc2)

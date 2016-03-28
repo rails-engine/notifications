@@ -10,23 +10,50 @@ class NotificationTest < ActiveSupport::TestCase
   end
 
   test '#read!' do
-    user1 = create(:user)
-    user2 = create(:user)
-    notes1 = create_list(:notification, 2, user: user1)
-    notes2 = create_list(:notification, 2, user: user2)
+    notes = create_list(:notification, 3)
     t = Time.now
     Time.stub(:now, t) do
-      Notification.read!(user1.id, notes1.collect(&:id) + notes2.collect(&:id))
+      Notification.read!(notes.collect(&:id))
     end
-    notes1.each do |note|
+    notes.each do |note|
+      assert_equal false, note.read?
       note.reload
       assert_equal t.to_i, note.read_at.to_i
       assert_equal true, note.read?
     end
+  end
 
-    notes2.each do |note|
-      note.reload
-      assert_equal nil, note.read_at
+  test '.actor_name' do
+    note = create(:notification)
+    assert_equal note.actor.name, note.actor_name
+
+    note = create(:notification, actor: nil)
+    assert_equal '', note.actor_name
+  end
+
+  test '.actor_avatar_url' do
+    note = create(:notification, actor: nil)
+    assert_equal Notification::DEFAULT_AVATAR, note.actor_avatar_url
+
+    note = create(:notification)
+    assert_equal Notification::DEFAULT_AVATAR, note.actor_avatar_url
+
+    user = create(:user)
+    user.stub(:avatar_url, '123') do
+      Notifications.config.stub(:user_avatar_url_method, :avatar_url) do
+        note.stub(:actor, user) do
+          assert_equal '123', note.actor_avatar_url
+        end
+      end
     end
+  end
+
+  test '.actor_profile_url' do
+    note = create(:notification, actor: nil)
+    assert_equal '#', note.actor_profile_url
+
+    note = create(:notification)
+    assert_equal "/users/#{note.actor_id}", note.actor_profile_url
+
   end
 end
