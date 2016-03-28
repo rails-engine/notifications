@@ -73,14 +73,14 @@ You app must be have:
 - app/views/notifications/_follow.html.erb
 - app/views/notifications/_mention.html.erb
 
-``erb
+```erb
 # app/views/notifications/_follow.html.erb
 <div class="media-heading">
   <%= link_to notification.actor.title, notification.actor %> just followed you.
 </div>
 ```
 
-``erb
+```erb
 # app/views/notifications/_mention.html.erb
 <div class="media-heading">
   <%= link_to notification.actor.title, notification.actor %> has mention you in
