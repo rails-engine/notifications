@@ -4,11 +4,33 @@ Rails mountable Notification for any applications.
 
 [![Gem Version](https://badge.fury.io/rb/notifications.svg)](https://badge.fury.io/rb/notifications) [![Build Status](https://travis-ci.org/rails-engine/notifications.svg)](https://travis-ci.org/rails-engine/notifications) [![Code Climate](https://codeclimate.com/github/rails-engine/notifications/badges/gpa.svg)](https://codeclimate.com/github/rails-engine/notifications) [![codecov.io](https://codecov.io/github/rails-engine/notifications/coverage.svg?branch=master)](https://codecov.io/github/rails-engine/notifications?branch=master) [![](http://inch-ci.org/github/rails-engine/notifications.svg?branch=master)](http://inch-ci.org/github/rails-engine/notifications?branch=master)
 
+## Installation
+
+```ruby
+# Gemfile
+gem 'notifications'
+```
+
+And then run `bundle install`.
+
+Now you have notifications generator in Rails application:
+
+```bash
+$ rails g notifications:install
+```
+
+And, you can generate views, controller if you need custom them:
+
+```bash
+$ rails g notifications:views
+$ rails g notifications:controllers
+```
+
 ## Usage
 
 ### Create a Notification
 
-```bash
+```ruby
 class User
   def follow(user)
     Notification.create(notify_type: 'follow', actor: self, user: user)
@@ -38,7 +60,7 @@ TODO...
 
 You can set multiple Notification as read by:
 
-```rb
+```ruby
 notification_ids = [1, 2 ...]
 Notification.read!(current_user.id, notification_ids)
 ```
