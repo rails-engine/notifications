@@ -11,7 +11,8 @@ module Notifications
     end
 
     def clean
-      current_user.notifications.delete_all
+      Notification.where(user_id: current_user.id).delete_all
+      redirect_to notifications_path
     end
   end
 end
