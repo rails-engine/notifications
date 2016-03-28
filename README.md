@@ -60,7 +60,40 @@ count = Notification.unread_count(current_user)
 
 ### Write your custom Notification partial view for notify_types:
 
-TODO...
+If you create a notify_type, you need add a partial view in `app/views/notifications/` path, for example:
+
+```rb
+# There have two notify_type
+Notification.create(notify_type: 'follow' ....)
+Notification.create(notify_type: 'mention', target: @reply, second_target: @topic, ....)
+```
+
+You app must be have:
+
+- app/views/notifications/_follow.html.erb
+- app/views/notifications/_mention.html.erb
+
+``erb
+# app/views/notifications/_follow.html.erb
+<div class="media-heading">
+  <%= link_to notification.actor.title, notification.actor %> just followed you.
+</div>
+```
+
+``erb
+# app/views/notifications/_mention.html.erb
+<div class="media-heading">
+  <%= link_to notification.actor.title, notification.actor %> has mention you in
+  <%= link_to notification.second_target.title, topic_path(notification.second_target) %>
+</div>
+<div class="media-content">
+  <%= notification.target.body %>
+</div>
+```
+
+### About Notification template N+1 performance
+
+We suggest use [second_level_cached](https://github.com/hooopo/second_level_cache) for solve N+1 performance issue.
 
 ### Mark notifications as read
 
