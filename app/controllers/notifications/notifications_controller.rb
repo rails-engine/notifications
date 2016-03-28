@@ -7,7 +7,7 @@ module Notifications
       @notifications.each do |n|
         unread_ids << n.id unless n.read?
       end
-      # Notification.read!(unread_ids)
+      Notification.read!(unread_ids)
     end
 
     def clean
