@@ -14,18 +14,23 @@
     margin-bottom: 10px;
     padding: 10px;
     border-bottom: 1px solid #eee;
+    color: #999;
 
-    &.read {
-      * { color: #999 !important; }
+    a { color: #555; }
+
+    &.unread {
+      color: #444;
+
+      .media-heading {
+        font-weight: bold;
+        font-size: 14px;
+      }
+
+      a { color: #222; text-decoration: underline; }
     }
 
-    .media-heading {
-      color: #000;
-    }
 
     .media-content {
-      color: #999;
-
       p:last-chind {
         margin-bottom: 0;
       }
