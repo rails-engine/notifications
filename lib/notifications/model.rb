@@ -14,5 +14,12 @@ module Notifications
     def read?
       self.read_at.present?
     end
+
+    module ClassMethods
+      def read!(user_id, ids = [])
+        return false if user_id.blank?
+        self.where(id: ids, user_id: user_id).update_all(read_at: Time.now)
+      end
+    end
   end
 end

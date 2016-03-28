@@ -14,26 +14,26 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-03-28T13:53:17+08:00">2016-03-28T13:53:17+08:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-03-28T14:27:12+08:00">2016-03-28T14:27:12+08:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">73.33%</span></span>
+    (<span class="covered_percent"><span class="red">75.0%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.91
+         0.95
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>7</b> files in total.
-    <b>60</b> relevant lines. 
-    <span class="green"><b>44</b> lines covered</span> and
+    <b>64</b> relevant lines. 
+    <span class="green"><b>48</b> lines covered</span> and
     <span class="red"><b>16</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -113,11 +113,11 @@
       <tr>
         <td class="strong"><a href="#f1472b1a592cdc5e490763b0d4b1f2bf3c98980f" class="src_link" title="lib/notifications/model.rb">lib/notifications/model.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>18</td>
-        <td>11</td>
-        <td>11</td>
+        <td>25</td>
+        <td>15</td>
+        <td>15</td>
         <td>0</td>
-        <td>1.1</td>
+        <td>1.2</td>
       </tr>
       
     </tbody>
@@ -348,15 +348,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.25
+         1.27
        </span>
     </span> hits/line)
   </h2>
   <a name="Libraries"></a>
   <div>
     <b>4</b> files in total.
-    <b>42</b> relevant lines. 
-    <span class="green"><b>42</b> lines covered</span> and
+    <b>46</b> relevant lines. 
+    <span class="green"><b>46</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -406,11 +406,11 @@
       <tr>
         <td class="strong"><a href="#f1472b1a592cdc5e490763b0d4b1f2bf3c98980f" class="src_link" title="lib/notifications/model.rb">lib/notifications/model.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>18</td>
-        <td>11</td>
-        <td>11</td>
+        <td>25</td>
+        <td>15</td>
+        <td>15</td>
         <td>0</td>
-        <td>1.1</td>
+        <td>1.2</td>
       </tr>
       
     </tbody>
@@ -1129,8 +1129,8 @@
     <h3>lib/notifications/model.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>11</b> relevant lines. 
-      <span class="green"><b>11</b> lines covered</span> and
+      <b>15</b> relevant lines. 
+      <span class="green"><b>15</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -1222,8 +1222,8 @@
           <code class="ruby">    def read?</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="15">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="15">
+          <span class="hits">4</span>
           
           <code class="ruby">      self.read_at.present?</code>
         </li>
@@ -1237,10 +1237,52 @@
         <li class="never" data-hits="" data-linenumber="17">
           
           
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    module ClassMethods</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="19">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      def read!(user_id, ids = [])</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="20">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        return false if user_id.blank?</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="21">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        self.where(id: ids, user_id: user_id).update_all(read_at: Time.now)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="22">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="23">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="24">
+          
+          
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="never" data-hits="" data-linenumber="25">
           
           
           <code class="ruby">end</code>
