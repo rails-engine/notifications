@@ -43,6 +43,8 @@
         1,
         1,
         null,
+        1,
+        null,
         null,
         1,
         8,
@@ -64,6 +66,7 @@
         1,
         null,
         null,
+        1,
         1,
         1,
         1,
@@ -151,6 +154,8 @@
         0,
         0,
         0,
+        0,
+        0,
         0
       ],
       "/Users/jason/work/notifications/app/controllers/notifications/notifications_controller.rb": [
@@ -169,9 +174,11 @@
         0,
         0,
         0,
+        0,
+        0,
         0
       ]
     },
-    "timestamp": 1459148494
+    "timestamp": 1459176918
   }
 }
