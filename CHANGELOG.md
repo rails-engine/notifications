@@ -2,6 +2,7 @@
 -----
 
 - Display no records message in notification list.
+- Remove bad admin?, owner? method in notifications_controller.
 
 0.0.4
 -----
