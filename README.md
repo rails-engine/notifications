@@ -4,6 +4,10 @@ Rails mountable Notification for any applications.
 
 [![Gem Version](https://badge.fury.io/rb/notifications.svg)](https://badge.fury.io/rb/notifications) [![Build Status](https://travis-ci.org/rails-engine/notifications.svg)](https://travis-ci.org/rails-engine/notifications) [![Code Climate](https://codeclimate.com/github/rails-engine/notifications/badges/gpa.svg)](https://codeclimate.com/github/rails-engine/notifications) [![codecov.io](https://codecov.io/github/rails-engine/notifications/coverage.svg?branch=master)](https://codecov.io/github/rails-engine/notifications?branch=master) [![](http://inch-ci.org/github/rails-engine/notifications.svg?branch=master)](http://inch-ci.org/github/rails-engine/notifications?branch=master)
 
+## Example:
+
+<img width="650" alt="2016-03-29 10 48 16" src="https://cloud.githubusercontent.com/assets/5518/14096499/d7555aaa-f59b-11e5-87f0-e4728db903c8.png">
+
 ## Installation
 
 ```ruby
