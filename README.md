@@ -95,17 +95,10 @@ You app must be have:
 
 We suggest use [second_level_cached](https://github.com/hooopo/second_level_cache) for solve N+1 performance issue.
 
-### Mark notifications as read
-
-You can set multiple Notification as read by:
-
-```ruby
-notification_ids = [1, 2 ...]
-Notification.read!(current_user.id, notification_ids)
-```
-
 ## Contributing
+
 Contribution directions go here.
 
 ## License
+
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
