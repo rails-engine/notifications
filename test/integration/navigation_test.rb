@@ -21,8 +21,10 @@ class NavigationTest < ActionDispatch::IntegrationTest
     get '/notifications'
     assert_response :success
     assert_select '.notifications' do
-      assert_select '.notification', 3
-      assert_select '.unread', 3
+      assert_select '.notification', 4
+      assert_select '.notification-new_topic', 1
+      assert_select '.notification-comment', 3
+      assert_select '.unread', 4
     end
 
     notes.each do |note|
@@ -33,7 +35,7 @@ class NavigationTest < ActionDispatch::IntegrationTest
     get '/notifications'
     assert_response :success
     assert_select '.notifications' do
-      assert_select '.notification', 3
+      assert_select '.notification', 4
       assert_select '.unread', 0
     end
   end

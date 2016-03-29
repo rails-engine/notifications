@@ -2,6 +2,8 @@
 -----
 
 - Add pagination.
+- Add fragment cache for notification view.
+- Add notify_type into notification row class name.
 
 0.0.3
 -----
