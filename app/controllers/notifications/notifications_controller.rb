@@ -1,7 +1,7 @@
 module Notifications
   class NotificationsController < Notifications::ApplicationController
     def index
-      @notifications = current_user.notifications.includes(:actor).order('id desc')
+      @notifications = current_user.notifications.includes(:actor).order('id desc').page(params[:page])
 
       unread_ids = []
       @notifications.each do |n|
