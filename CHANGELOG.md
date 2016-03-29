@@ -1,3 +1,8 @@
+0.0.5
+-----
+
+- Display no records message in notification list.
+
 0.0.4
 -----
 

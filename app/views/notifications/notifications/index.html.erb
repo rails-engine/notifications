@@ -7,7 +7,11 @@
     </span>
   </div>
   <div class="list">
-    <%= render @notifications %>
+    <% if @notifications.blank? %>
+      <div class="no-records"><%= t('notifications.no_records') %></div>
+    <% else %>
+      <%= render @notifications %>
+    <% end %>
   </div>
   <%= will_paginate @notifications %>
 </div>
