@@ -1,3 +1,9 @@
+0.1.0
+-----
+
+- Add mount Engine into routes.rb when run install command.
+- Fix migration install command bug in Rails 4.x;
+
 0.0.5
 -----
 
