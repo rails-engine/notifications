@@ -103,6 +103,10 @@ We suggest use [second_level_cached](https://github.com/hooopo/second_level_cach
 
 Contribution directions go here.
 
+## Site Used
+
+- [Ruby China](https://ruby-china.org)
+
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
