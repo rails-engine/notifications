@@ -48,8 +48,8 @@ class NavigationTest < ActionDispatch::IntegrationTest
   test 'DELETE /clean with login' do
     sign_in @current_user
     create_list(:notification, 2)
-    notes = create_list(:notification, 3, user: @current_user)
-    assert_difference "Notification.count", -3 do
+    create_list(:notification, 3, user: @current_user)
+    assert_difference 'Notification.count', -3 do
       delete '/notifications/clean'
       assert_response :redirect
     end
@@ -58,4 +58,3 @@ class NavigationTest < ActionDispatch::IntegrationTest
     assert_response :redirect
   end
 end
-

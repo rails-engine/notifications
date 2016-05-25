@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class NotificationsTest < ActiveSupport::TestCase
-  test ".config" do
+  test '.config' do
     assert_kind_of Notifications::Configuration, Notifications.config
     assert_equal 'User', Notifications.config.user_class
     assert_equal 'current_user', Notifications.config.current_user_method

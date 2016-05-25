@@ -20,7 +20,7 @@ module Notifications
     end
 
     def actor_name
-      return "" if self.actor.blank?
+      return '' if self.actor.blank?
       self.actor.send(Notifications.config.user_name_method)
     end
 

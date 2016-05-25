@@ -59,8 +59,8 @@ class NotificationTest < ActiveSupport::TestCase
   test '#unread_count' do
     user = create(:user)
     create(:notification)
-    read_notes = create_list(:notification, 2, user: user, read_at: Time.now)
-    notes = create_list(:notification, 3, user: user)
+    create_list(:notification, 2, user: user, read_at: Time.now)
+    create_list(:notification, 3, user: user)
     assert_equal 3, Notification.unread_count(user)
   end
 end
