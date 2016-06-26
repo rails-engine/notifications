@@ -6,7 +6,7 @@ Rails mountable Notification for any applications.
 
 ## Example:
 
-<img width="650" alt="2016-03-29 10 48 16" src="https://cloud.githubusercontent.com/assets/5518/14096499/d7555aaa-f59b-11e5-87f0-e4728db903c8.png">
+<img width="800" alt="2016-03-29 10 48 16" src="https://cloud.githubusercontent.com/assets/5518/16375560/8e17f516-3c8e-11e6-98d6-7d6e55c99938.png">
 
 ## Installation
 
