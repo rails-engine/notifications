@@ -1,3 +1,8 @@
+0.2.0
+-----
+
+- Group notification by days.
+
 0.1.0
 -----
 

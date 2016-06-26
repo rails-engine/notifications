@@ -10,10 +10,21 @@
     margin-bottom: 10px;
   }
 
-  .notification {
-    margin-bottom: 10px;
+
+  .notification-group {
     padding: 10px;
-    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+
+    .group-title {
+      padding: 5px 0;
+      color: #999;
+      border-bottom: 1px solid #eee;
+    }
+  }
+
+  .notification {
+    margin: 0;
+    padding: 10px 0px;
     color: #999;
 
     a { color: #555; }
@@ -31,7 +42,7 @@
 
 
     .media-content {
-      p:last-chind {
+      p:last-child {
         margin-bottom: 0;
       }
     }

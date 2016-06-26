@@ -8,6 +8,8 @@ module Notifications
         unread_ids << n.id unless n.read?
       end
       Notification.read!(unread_ids)
+
+      @notification_groups = @notifications.group_by { |note| note.created_at.to_date }
     end
 
     def clean

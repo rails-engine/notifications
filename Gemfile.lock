@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    notifications (0.1.0)
+    notifications (0.2.0)
       rails (>= 4.2.0, < 5.1)
       will_paginate (>= 3.0.0)
 
@@ -187,4 +187,4 @@ DEPENDENCIES
   uglifier
 
 BUNDLED WITH
-   1.12.4
+   1.12.5
