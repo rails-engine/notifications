@@ -13,29 +13,31 @@ class NavigationTest < ActionDispatch::IntegrationTest
   test 'GET / with login' do
     sign_in @current_user
     create_list(:notification, 2)
+    topic = create(:topic)
     comment = create(:comment)
     notes = create_list(:notification, 3, target: comment,
                                           second_target: comment.topic,
                                           notify_type: 'comment',
                                           user: @current_user)
+    create_list(:notification, 2, target: topic,
+                                  notify_type: 'new_topic',
+                                  created_at: 1.days.ago,
+                                  user: @current_user)
     get '/notifications'
     assert_response :success
     assert_select '.notifications' do
-      assert_select '.notification', 4
-      assert_select '.notification-new_topic', 1
+      assert_select '.notification', 5
+      assert_select '.notification-group', 2
+      assert_select '.notification-new_topic', 2
       assert_select '.notification-comment', 3
-      assert_select '.unread', 4
-    end
-
-    notes.each do |note|
-      note.reload
-      assert_equal true, note.read?
+      assert_select '.unread', 5
     end
 
     get '/notifications'
     assert_response :success
     assert_select '.notifications' do
-      assert_select '.notification', 4
+      assert_select '.notification', 5
+      assert_select '.notification-group', 2
       assert_select '.unread', 0
     end
   end
