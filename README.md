@@ -97,7 +97,7 @@ You app must be have:
 
 ### About Notification template N+1 performance
 
-We suggest use [second_level_cached](https://github.com/hooopo/second_level_cache) for solve N+1 performance issue.
+Suggest you to use [second_level_cache](https://github.com/hooopo/second_level_cache) for solve N+1 performance issue.
 
 ## Contributing
 
