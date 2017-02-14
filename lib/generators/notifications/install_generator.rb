@@ -10,7 +10,7 @@ module Notifications
         if File.exist?(path)
           puts 'Skipping config/initializers/notifications.rb creation, as file already exists!'
         else
-          puts 'Adding Homeland initializer (config/initializers/notifications.rb)...'
+          puts 'Adding Notifications initializer (config/initializers/notifications.rb)...'
           template 'config/initializers/notifications.rb', path
         end
       end
