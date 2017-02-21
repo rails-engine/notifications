@@ -147,8 +147,6 @@ Devise.setup do |config|
   # Range for password length.
   config.password_length = 6..72
 
-  config.email_regexp = /\A[^@\s]+@([^@\s]+\.)+[^@\W]+\z/
-
   # ==> Configuration for :timeoutable
   # The time you want to timeout the user session without activity. After this
   # time the user will be asked for credentials again. Default is 30 minutes.

@@ -2,15 +2,15 @@ source 'https://rubygems.org'
 
 gemspec
 
-gem 'rails', '5.0.1'
+gem 'rails', '~> 5.0'
 gem 'sass-rails'
 gem 'uglifier'
 gem 'coffee-rails'
-gem 'devise', '4.0.0'
+gem 'devise', '4.2.0'
 gem 'jquery-rails'
 gem 'mysql2'
 gem 'puma'
-gem 'bootstrap', '4.0.0.alpha3'
+gem 'bootstrap', '~> 4.0.0.alpha3.1'
 
 group :development, :test do
   gem 'minitest'

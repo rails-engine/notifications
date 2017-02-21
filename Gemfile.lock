@@ -49,7 +49,7 @@ GEM
     autoprefixer-rails (6.7.4)
       execjs
     bcrypt (3.1.11)
-    bootstrap (4.0.0.alpha3)
+    bootstrap (4.0.0.alpha6)
       autoprefixer-rails (>= 6.0.3)
       sass (>= 3.4.19)
     builder (3.2.3)
@@ -65,7 +65,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.4)
-    devise (4.0.0)
+    devise (4.2.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0, < 5.1)
@@ -167,20 +167,21 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap (= 4.0.0.alpha3)
+  bootstrap (~> 4.0.0.alpha3.1)
   codecov
   coffee-rails
-  devise (= 4.0.0)
+  devise (= 4.2.0)
   factory_girl
   jquery-rails
   minitest
   mysql2
   notifications!
   puma
-  rails (= 5.0.1)
+  rails (~> 5.0)
   sass-rails
   simplecov
   uglifier
+  will_paginate
 
 BUNDLED WITH
    1.13.7

@@ -18,10 +18,10 @@ class NavigationTest < ActionDispatch::IntegrationTest
     create_list(:notification, 2)
     topic = create(:topic)
     comment = create(:comment)
-    notes = create_list(:notification, 3, target: comment,
-                                          second_target: comment.topic,
-                                          notify_type: 'comment',
-                                          user: @current_user)
+    create_list(:notification, 3, target: comment,
+                                  second_target: comment.topic,
+                                  notify_type: 'comment',
+                                  user: @current_user)
     create_list(:notification, 2, target: topic,
                                   notify_type: 'new_topic',
                                   created_at: 1.days.ago,
