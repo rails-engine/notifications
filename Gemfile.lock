@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    notifications (0.2.0)
+    notifications (0.3.0)
       rails (>= 4.2.0, < 5.1)
       will_paginate (~> 3)
 
@@ -181,7 +181,6 @@ DEPENDENCIES
   sass-rails
   simplecov
   uglifier
-  will_paginate
 
 BUNDLED WITH
    1.13.7
