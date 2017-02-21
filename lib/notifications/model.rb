@@ -31,7 +31,8 @@ module Notifications
     end
 
     def actor_profile_url
-      return '#' if self.actor.blank?
+      return nil if Notifications.config.user_profile_url_method.blank?
+      return nil if self.actor.blank?
       self.actor.send(Notifications.config.user_profile_url_method)
     end
 

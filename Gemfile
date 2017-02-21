@@ -2,11 +2,11 @@ source 'https://rubygems.org'
 
 gemspec
 
-gem 'rails', '5.0.0.rc1'
+gem 'rails', '5.0.1'
 gem 'sass-rails'
 gem 'uglifier'
 gem 'coffee-rails'
-gem 'devise', '4.0.0.rc2'
+gem 'devise', '4.0.0'
 gem 'jquery-rails'
 gem 'mysql2'
 gem 'puma'

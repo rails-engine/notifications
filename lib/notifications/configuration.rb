@@ -22,7 +22,7 @@ module Notifications
     #
     attr_accessor :user_avatar_url_method
 
-    # method name of user profile page path, in User model, default: 'profile_url'
+    # method name of user profile page path, in User model, default: nil
     # Example:
     #
     # class User
@@ -37,7 +37,7 @@ module Notifications
     # current_user method name in your Controller, default: 'current_user'
     attr_accessor :current_user_method
 
-    # authenticate_user method in your Controller, default: 'authenticate_user!'
+    # authenticate_user method in your Controller, default: nil
     attr_accessor :authenticate_user_method
 
     # pagination size, default: 32

@@ -50,10 +50,12 @@ class NotificationTest < ActiveSupport::TestCase
 
   test '.actor_profile_url' do
     note = create(:notification, actor: nil)
-    assert_equal '#', note.actor_profile_url
+    assert_nil note.actor_profile_url
 
     note = create(:notification)
-    assert_equal "/users/#{note.actor_id}", note.actor_profile_url
+    Notifications.config.stub(:user_profile_url_method, :profile_url) do
+      assert_equal "/users/#{note.actor_id}", note.actor_profile_url
+    end
   end
 
   test '#unread_count' do

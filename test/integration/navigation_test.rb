@@ -3,10 +3,13 @@ require 'test_helper'
 class NavigationTest < ActionDispatch::IntegrationTest
   setup do
     @current_user = create(:user)
+
   end
 
   test 'GET / without login' do
-    get notifications_path
+    Notifications.config.stub(:authenticate_user_method, :authenticate_user!) do
+      get notifications_path
+    end
     assert_required_user
   end
 

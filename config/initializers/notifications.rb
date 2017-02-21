@@ -9,10 +9,10 @@ Notifications.configure do
   # Method of user avatar in User model, default: nil
   # self.user_avatar_url_method = nil
 
-  # Method name of user profile page path, in User model, default: 'profile_url'
+  # Method name of user profile page path, in User model, default: nil
   # self.user_profile_url_method = 'profile_url'
 
-  # authenticate_user method in your Controller, default: 'authenticate_user!'
+  # authenticate_user method in your Controller, default: nil
   # If you use Devise, authenticate_user! is correct
   # self.authenticate_user_method = 'authenticate_user!'
 

@@ -1,3 +1,16 @@
+0.3.0
+-----
+
+Break changes:
+
+- `config.user_profile_url_method` now default is nil;
+- `config.authenticate_user_method` now default is nil;
+- It's will not disaply avatar, when you don't setup `user.profile_url` and `user.avatar_url`;
+
+Bug fix:
+
+- Bugfix with that "undefined method `notifications' for <User>".
+
 0.2.0
 -----
 

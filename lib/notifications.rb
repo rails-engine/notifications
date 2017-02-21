@@ -14,8 +14,8 @@ module Notifications
       @config.user_class               = 'User'
       @config.user_name_method         = 'name'
       @config.user_avatar_url_method   = nil
-      @config.user_profile_url_method  = 'profile_url'
-      @config.authenticate_user_method = 'authenticate_user!'
+      @config.user_profile_url_method  = nil
+      @config.authenticate_user_method = nil
       @config.current_user_method      = 'current_user'
       @config
     end
