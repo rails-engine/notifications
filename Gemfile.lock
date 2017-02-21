@@ -2,8 +2,8 @@ PATH
   remote: .
   specs:
     notifications (0.3.0)
+      kaminari (>= 0.15)
       rails (>= 4.2.0, < 5.1)
-      will_paginate (~> 3)
 
 GEM
   remote: https://rubygems.org/
@@ -84,6 +84,18 @@ GEM
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (2.0.3)
+    kaminari (1.0.1)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.0.1)
+      kaminari-activerecord (= 1.0.1)
+      kaminari-core (= 1.0.1)
+    kaminari-actionview (1.0.1)
+      actionview
+      kaminari-core (= 1.0.1)
+    kaminari-activerecord (1.0.1)
+      activerecord
+      kaminari-core (= 1.0.1)
+    kaminari-core (1.0.1)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.4)
@@ -161,13 +173,12 @@ GEM
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
-    will_paginate (3.1.5)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap (~> 4.0.0.alpha3.1)
+  bootstrap (~> 4.0.0.alpha6)
   codecov
   coffee-rails
   devise (= 4.2.0)

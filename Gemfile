@@ -10,7 +10,7 @@ gem 'devise', '4.2.0'
 gem 'jquery-rails'
 gem 'mysql2'
 gem 'puma'
-gem 'bootstrap', '~> 4.0.0.alpha3.1'
+gem 'bootstrap', '~> 4.0.0.alpha6'
 
 group :development, :test do
   gem 'minitest'

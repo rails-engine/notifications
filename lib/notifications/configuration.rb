@@ -39,8 +39,5 @@ module Notifications
 
     # authenticate_user method in your Controller, default: nil
     attr_accessor :authenticate_user_method
-
-    # pagination size, default: 32
-    attr_accessor :per_page
   end
 end

@@ -3,7 +3,6 @@ require 'test_helper'
 class NavigationTest < ActionDispatch::IntegrationTest
   setup do
     @current_user = create(:user)
-
   end
 
   test 'GET / without login' do
@@ -15,19 +14,25 @@ class NavigationTest < ActionDispatch::IntegrationTest
 
   test 'GET / with login' do
     sign_in @current_user
-    create_list(:notification, 2)
-    topic = create(:topic)
-    comment = create(:comment)
-    create_list(:notification, 3, target: comment,
-                                  second_target: comment.topic,
+    without_notes = create_list(:notification, 2)
+    create_list(:notification, 3, target_type: 'Comment',
+                                  target_id: 10,
+                                  second_target_type: 'Topic',
+                                  second_target_id: 100,
                                   notify_type: 'comment',
                                   user: @current_user)
-    create_list(:notification, 2, target: topic,
+    create_list(:notification, 2, target_type: 'Topic',
+                                  target_id: 101,
                                   notify_type: 'new_topic',
                                   created_at: 1.days.ago,
                                   user: @current_user)
     get '/notifications'
     assert_response :success
+    assert_select '.notifications' do
+      assert_select "#notification-#{without_notes[0].id}", 0
+      assert_select "#notification-#{without_notes[1].id}", 0
+    end
+
     assert_select '.notifications' do
       assert_select '.notification', 5
       assert_select '.notification-group', 2

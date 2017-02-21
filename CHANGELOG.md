@@ -1,3 +1,11 @@
+0.4.0
+-----
+
+Break Changes:
+
+- Use Kaminari instead of will_paginate.
+- Remove `config.per_page` config.
+
 0.3.0
 -----
 
