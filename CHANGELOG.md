@@ -1,3 +1,8 @@
+0.4.2
+-----
+
+- Fix migration warning in Rails 5.1
+
 0.4.1
 -----
 
