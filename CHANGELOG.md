@@ -1,3 +1,8 @@
+0.4.3
+-----
+
+- Change `belongs_to :target` with optional for comply with Rails 5 (#9)
+
 0.4.2
 -----
 
