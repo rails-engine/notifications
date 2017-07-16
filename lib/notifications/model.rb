@@ -8,9 +8,9 @@ module Notifications
       belongs_to :actor, class_name: Notifications.config.user_class
       belongs_to :user, class_name: Notifications.config.user_class
 
-      belongs_to :target, polymorphic: true
-      belongs_to :second_target, polymorphic: true
-      belongs_to :third_target, polymorphic: true
+      belongs_to :target, polymorphic: true, optional: true
+      belongs_to :second_target, polymorphic: true, optional: true
+      belongs_to :third_target, polymorphic: true, optional: true
 
       scope :unread, -> { where(read_at: nil) }
     end
