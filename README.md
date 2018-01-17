@@ -1,6 +1,6 @@
 # Notifications
 
-Rails mountable Notification for any applications.
+Mountable notifications for any Rails applications.
 
 [![Gem Version](https://badge.fury.io/rb/notifications.svg)](https://badge.fury.io/rb/notifications) [![Build Status](https://travis-ci.org/rails-engine/notifications.svg)](https://travis-ci.org/rails-engine/notifications) [![Code Climate](https://codeclimate.com/github/rails-engine/notifications/badges/gpa.svg)](https://codeclimate.com/github/rails-engine/notifications) [![codecov.io](https://codecov.io/github/rails-engine/notifications/coverage.svg?branch=master)](https://codecov.io/github/rails-engine/notifications?branch=master) [![](http://inch-ci.org/github/rails-engine/notifications.svg?branch=master)](http://inch-ci.org/github/rails-engine/notifications?branch=master)
 
@@ -17,13 +17,13 @@ gem 'notifications'
 
 And then run `bundle install`.
 
-Now you have notifications generator in Rails application:
+You now have a notifications generator in your Rails application:
 
 ```bash
 $ rails g notifications:install
 ```
 
-And, you can generate views, controller if you need custom them:
+You can generate views, controllers if you need to customize them:
 
 ```bash
 $ rails g notifications:views
@@ -56,7 +56,7 @@ class Comment
 end
 ```
 
-Get user unread count:
+Get unread notifications count for a user:
 
 ```rb
 count = Notification.unread_count(current_user)
@@ -64,7 +64,7 @@ count = Notification.unread_count(current_user)
 
 ### Write your custom Notification partial view for notify_types:
 
-If you create a notify_type, you need add a partial view in `app/views/notifications/` path, for example:
+If you create a notify_type, you need to add a partial view in `app/views/notifications/` path, for example:
 
 ```rb
 # There have two notify_type
@@ -72,7 +72,7 @@ Notification.create(notify_type: 'follow' ....)
 Notification.create(notify_type: 'mention', target: @reply, second_target: @topic, ....)
 ```
 
-You app must be have:
+You app must have:
 
 - app/views/notifications/_follow.html.erb
 - app/views/notifications/_mention.html.erb
@@ -87,7 +87,7 @@ You app must be have:
 ```erb
 # app/views/notifications/_mention.html.erb
 <div class="media-heading">
-  <%= link_to notification.actor.title, notification.actor %> has mention you in
+  <%= link_to notification.actor.title, notification.actor %> has mentioned you in
   <%= link_to notification.second_target.title, topic_path(notification.second_target) %>
 </div>
 <div class="media-content">
@@ -97,7 +97,7 @@ You app must be have:
 
 ### About Notification template N+1 performance
 
-Suggest you to use [second_level_cache](https://github.com/hooopo/second_level_cache) for solve N+1 performance issue.
+It is recommended that you use [second_level_cache](https://github.com/hooopo/second_level_cache) for solving N+1 performance issues.
 
 ## Contributing
 
