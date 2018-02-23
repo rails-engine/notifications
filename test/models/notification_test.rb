@@ -28,6 +28,7 @@ class NotificationTest < ActiveSupport::TestCase
     assert_equal note.actor.name, note.actor_name
 
     note = create(:notification, actor: nil)
+    assert_equal false, note.new_record?
     assert_equal '', note.actor_name
   end
 

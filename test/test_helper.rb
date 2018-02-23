@@ -1,8 +1,8 @@
 # Configure Rails Environment
 ENV["RAILS_ENV"] = "test"
 
-require 'factory_girl'
-FactoryGirl.definition_file_paths = [File.expand_path('../factories', __FILE__)]
+require 'factory_bot'
+FactoryBot.definition_file_paths = [File.expand_path('../factories', __FILE__)]
 
 require 'simplecov'
 if ENV['CI']=='true'
@@ -23,7 +23,7 @@ ActiveRecord::Migrator.migrations_paths = [
 require "rails/test_help"
 require 'minitest/mock'
 
-FactoryGirl.find_definitions
+FactoryBot.find_definitions
 
 Notifications.configure do
   self.authenticate_user_method = 'authenticate_user!'
@@ -35,7 +35,7 @@ Minitest.backtrace_filter = Minitest::BacktraceFilter.new
 
 # Load fixtures from the engine
 class ActiveSupport::TestCase
-  include FactoryGirl::Syntax::Methods
+  include FactoryBot::Syntax::Methods
 end
 
 class ActionView::TestCase
