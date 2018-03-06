@@ -1,4 +1,4 @@
-class CreateNotifications < ActiveRecord::Migration[5.0]
+class CreateNotifications < ActiveRecord::Migration
   def change
     create_table :notifications do |t|
       t.integer :user_id, null: false
