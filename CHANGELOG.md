@@ -1,3 +1,8 @@
+0.4.5
+-----
+
+- Fix `optional` key and Migration error in Rails 4.x; (#15)
+
 0.4.4
 -----
 
