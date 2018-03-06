@@ -1,3 +1,8 @@
+0.4.5
+-----
+
+- Remove Rails 4.x support.
+
 0.4.4
 -----
 

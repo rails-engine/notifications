@@ -101,7 +101,13 @@ It is recommended that you use [second_level_cache](https://github.com/hooopo/se
 
 ## Contributing
 
-Contribution directions go here.
+Testing for multiple Rails versions:
+
+```bash
+make test_51
+# or test all
+make test
+```
 
 ## Site Used
 
