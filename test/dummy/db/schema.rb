@@ -13,53 +13,55 @@
 
 ActiveRecord::Schema.define(version: 20160328070302) do
 
-  create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "topic_id"
-    t.integer  "user_id"
-    t.string   "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "comments", force: :cascade do |t|
+    t.integer  "topic_id",   limit: 4
+    t.integer  "user_id",    limit: 4
+    t.string   "body",       limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "notifications", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id",            null: false
-    t.integer  "actor_id"
-    t.string   "notify_type",        null: false
-    t.string   "target_type"
-    t.integer  "target_id"
-    t.string   "second_target_type"
-    t.integer  "second_target_id"
-    t.string   "third_target_type"
-    t.integer  "third_target_id"
+  create_table "notifications", force: :cascade do |t|
+    t.integer  "user_id",            limit: 4,   null: false
+    t.integer  "actor_id",           limit: 4
+    t.string   "notify_type",        limit: 255, null: false
+    t.string   "target_type",        limit: 255
+    t.integer  "target_id",          limit: 4
+    t.string   "second_target_type", limit: 255
+    t.integer  "second_target_id",   limit: 4
+    t.string   "third_target_type",  limit: 255
+    t.integer  "third_target_id",    limit: 4
     t.datetime "read_at"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.index ["user_id", "notify_type"], name: "index_notifications_on_user_id_and_notify_type", using: :btree
-    t.index ["user_id"], name: "index_notifications_on_user_id", using: :btree
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
-  create_table "topics", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "title"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  add_index "notifications", ["user_id", "notify_type"], name: "index_notifications_on_user_id_and_notify_type", using: :btree
+  add_index "notifications", ["user_id"], name: "index_notifications_on_user_id", using: :btree
+
+  create_table "topics", force: :cascade do |t|
+    t.string   "title",      limit: 255
+    t.integer  "user_id",    limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
+  create_table "users", force: :cascade do |t|
+    t.string   "email",                  limit: 255, default: "", null: false
+    t.string   "encrypted_password",     limit: 255, default: "", null: false
+    t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          limit: 4,   default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+    t.string   "current_sign_in_ip",     limit: 255
+    t.string   "last_sign_in_ip",        limit: 255
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
   end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end
