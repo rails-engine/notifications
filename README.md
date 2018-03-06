@@ -11,8 +11,10 @@ Mountable notifications for any Rails applications.
 ## Installation
 
 ```ruby
-# Gemfile
-gem 'notifications'
+# Gemfile Rails ~> 5
+gem 'notifications', '~> 0.6.0'
+# Gemfile for Rails ~> 4.2
+gem 'notifications', '~> 0.5.0'
 ```
 
 And then run `bundle install`.

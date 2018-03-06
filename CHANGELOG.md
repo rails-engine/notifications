@@ -1,7 +1,16 @@
-0.4.5
+0.6.0
 -----
 
-- Remove Rails 4.x support.
+- Dependency Rails ~> 5
+
+-----------
+
+0.5.0
+-----
+
+- Dependency Rails ~> 4.2
+
+----------------------
 
 0.4.4
 -----
