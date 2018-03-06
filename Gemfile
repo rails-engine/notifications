@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gemspec
 
-gem 'rails', '~> 5.2.0.rc'
+gem 'rails', '~> 4.2'
 gem 'sass-rails'
 gem 'uglifier'
 gem 'coffee-rails'
