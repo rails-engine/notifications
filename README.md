@@ -82,20 +82,22 @@ You app must have:
 ```erb
 # app/views/notifications/_follow.html.erb
 <div class="media-heading">
-  <%= link_to notification.actor.title, notification.actor %> just followed you.
+  <%= link_to notification.actor.title, main_app.user_path(notification.actor) %> just followed you.
 </div>
 ```
 
 ```erb
 # app/views/notifications/_mention.html.erb
 <div class="media-heading">
-  <%= link_to notification.actor.title, notification.actor %> has mentioned you in
-  <%= link_to notification.second_target.title, topic_path(notification.second_target) %>
+  <%= link_to notification.actor.title, main_app.user_path(notification.actor) %> has mentioned you in
+  <%= link_to notification.second_target.title, main_app.topic_path(notification.second_target) %>
 </div>
 <div class="media-content">
   <%= notification.target.body %>
 </div>
 ```
+
+> NOTE: When you want use Rails route path name in notification views, you must use [main_app](http://api.rubyonrails.org/classes/Rails/Engine.html#class-Rails::Engine-label-Using+Engine-27s+routes+outside+Engine) prefix. etc: `main_app.user_path(user)`
 
 ### About Notification template N+1 performance
 
