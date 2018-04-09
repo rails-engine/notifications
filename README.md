@@ -97,7 +97,7 @@ You app must have:
 </div>
 ```
 
-> NOTE: When you want use Rails route path name in notification views, you must use `main_app.` prefix. etc: `main_app.user_path(user)`
+> NOTE: When you want use Rails route path name in notification views, you must use [main_app](http://api.rubyonrails.org/classes/Rails/Engine.html#class-Rails::Engine-label-Using+Engine-27s+routes+outside+Engine) prefix. etc: `main_app.user_path(user)`
 
 ### About Notification template N+1 performance
 
