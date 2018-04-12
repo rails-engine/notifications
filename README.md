@@ -45,7 +45,7 @@ end
 
 class Comment
   belongs_to :post
-  belongs_user :user
+  belongs_to :user
 
   after_commit :create_notifications, on: [:create]
   def create_notifications
