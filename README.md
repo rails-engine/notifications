@@ -74,7 +74,7 @@ Notification.create(notify_type: 'follow' ....)
 Notification.create(notify_type: 'mention', target: @reply, second_target: @topic, ....)
 ```
 
-You app must have:
+Your app must have:
 
 - app/views/notifications/_follow.html.erb
 - app/views/notifications/_mention.html.erb
