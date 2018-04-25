@@ -13,6 +13,8 @@ module Notifications
       belongs_to :third_target, polymorphic: true, optional: true
 
       scope :unread, -> { where(read_at: nil) }
+      scope :read, -> { where.not(read_at: nil) }
+
     end
 
     def read?
