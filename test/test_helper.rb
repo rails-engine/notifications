@@ -1,11 +1,11 @@
 # Configure Rails Environment
-ENV["RAILS_ENV"] = "test"
+ENV['RAILS_ENV'] = 'test'
 
 require 'factory_bot'
-FactoryBot.definition_file_paths = [File.expand_path('../factories', __FILE__)]
+FactoryBot.definition_file_paths = [File.expand_path('factories', __dir__)]
 
 require 'simplecov'
-if ENV['CI']=='true'
+if ENV['CI'] == 'true'
   require 'codecov'
   SimpleCov.formatter = SimpleCov::Formatter::Codecov
 end
@@ -14,13 +14,13 @@ SimpleCov.start 'rails' do
   add_filter 'lib/generators'
 end
 
-require File.expand_path("../dummy/config/environment", __FILE__)
+require File.expand_path('dummy/config/environment', __dir__)
 ActiveRecord::Migrator.migrations_paths = [
-  File.expand_path('../../db/migrate', __FILE__),
-  File.expand_path("../dummy/db/migrate", __FILE__)
+  File.expand_path('../db/migrate', __dir__),
+  File.expand_path('dummy/db/migrate', __dir__)
 ]
 
-require "rails/test_help"
+require 'rails/test_help'
 require 'minitest/mock'
 
 FactoryBot.find_definitions
@@ -45,8 +45,8 @@ end
 class ActionDispatch::IntegrationTest
   def sign_in(user)
     post main_app.user_session_path \
-      "user[email]"    => user.email,
-      "user[password]" => user.password
+      'user[email]'    => user.email,
+      'user[password]' => user.password
   end
 
   def sign_in_session(user)

@@ -15,7 +15,7 @@ class CreateNotifications < ActiveRecord::Migration[5.0]
       t.timestamps null: false
     end
 
-    add_index :notifications, [:user_id, :notify_type]
+    add_index :notifications, %i[user_id notify_type]
     add_index :notifications, [:user_id]
   end
 end

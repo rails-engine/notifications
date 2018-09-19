@@ -3,7 +3,7 @@ module Notifications
   module Generators
     class InstallGenerator < Rails::Generators::Base
       desc "Create Notifications's base files"
-      source_root File.expand_path('../../../../', __FILE__)
+      source_root File.expand_path('../../..', __dir__)
 
       def add_initializer
         path = "#{Rails.root}/config/initializers/notifications.rb"

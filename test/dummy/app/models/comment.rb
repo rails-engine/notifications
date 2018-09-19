@@ -11,6 +11,5 @@ class Comment < ApplicationRecord
       second_target: self.topic,
       user_id: self.topic.user_id
     )
-
   end
 end

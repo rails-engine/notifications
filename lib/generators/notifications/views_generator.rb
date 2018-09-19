@@ -2,7 +2,7 @@ require 'rails/generators'
 module Notifications
   module Generators
     class ViewsGenerator < Rails::Generators::Base #:nodoc:
-      source_root File.expand_path('../../../../', __FILE__)
+      source_root File.expand_path('../../..', __dir__)
       desc "Used to copy Notifications's views to your application's views."
 
       def copy_views
