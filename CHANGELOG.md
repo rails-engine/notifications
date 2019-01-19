@@ -1,14 +1,19 @@
+0.6.1
+-----
+
+- Dependency Rails >= 5;
+
 0.6.0
 -----
 
-- Dependency Rails ~> 5
+- Dependency Rails ~> 5;
 
 -----------
 
 0.5.0
 -----
 
-- Dependency Rails ~> 4.2
+- Dependency Rails ~> 4.2;
 
 ----------------------
 

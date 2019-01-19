@@ -1,9 +1,9 @@
 PATH
   remote: .
   specs:
-    notifications (0.6.0)
+    notifications (0.6.1)
       kaminari (>= 0.15)
-      rails (~> 5)
+      rails (>= 5)
 
 GEM
   remote: https://rubygems.org/
@@ -214,4 +214,4 @@ DEPENDENCIES
   uglifier
 
 BUNDLED WITH
-   1.17.1
+   1.17.2
