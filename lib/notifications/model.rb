@@ -13,6 +13,8 @@ module Notifications
       belongs_to :third_target, polymorphic: true, optional: true
 
       scope :unread, -> { where(read_at: nil) }
+      scope :read, -> { where.not(read_at: nil) }
+
     end
 
     def read?
@@ -44,6 +46,10 @@ module Notifications
 
       def unread_count(user)
         Notification.where(user: user).unread.count
+      end
+
+      def read_count(user)
+        Notification.where(user: user).read.count
       end
     end
   end
