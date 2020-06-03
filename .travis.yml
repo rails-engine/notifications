@@ -9,9 +9,8 @@ rvm:
   - 2.3.0
   - 2.4.0
 gemfile:
-  - gemfiles/Gemfile-5-0
-  - gemfiles/Gemfile-5-1
   - gemfiles/Gemfile-5-2
+  - gemfiles/Gemfile-6-0
 
 before_script:
   - bundle install

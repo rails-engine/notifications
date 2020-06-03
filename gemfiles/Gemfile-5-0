@@ -1,6 +1,0 @@
-source 'https://rubygems.org'
-
-gemspec path: '..'
-
-gem 'rails', '~> 5.0.0'
-eval File.read(File.expand_path('../../Gemfile-dev', __FILE__)), nil, "Gemfile-dev"
