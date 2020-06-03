@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    notifications (0.6.1)
+    notifications (1.0.0)
       kaminari (>= 0.15)
       rails (>= 5.2)
 

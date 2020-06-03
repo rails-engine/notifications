@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Notifications
-  VERSION = '0.6.1'
+  VERSION = '1.0.0'
 end
