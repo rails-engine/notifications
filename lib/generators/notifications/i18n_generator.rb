@@ -1,9 +1,9 @@
-require 'rails/generators'
+require "rails/generators"
 module Notifications
   module Generators
     class I18nGenerator < Rails::Generators::Base
       desc "Create Notifications's default I18n files"
-      source_root File.expand_path('../../..', __dir__)
+      source_root File.expand_path("../../..", __dir__)
 
       def add_locales
         %w[en.yml zh-CN.yml].each do |fname|

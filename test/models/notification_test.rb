@@ -1,7 +1,7 @@
-require 'test_helper'
+require "test_helper"
 
 class NotificationTest < ActiveSupport::TestCase
-  test '.read?' do
+  test ".read?" do
     note = create(:notification)
     assert_equal false, note.read?
 
@@ -9,7 +9,7 @@ class NotificationTest < ActiveSupport::TestCase
     assert_equal true, note.read?
   end
 
-  test '#read!' do
+  test "#read!" do
     notes = create_list(:notification, 3)
     t = Time.now
     Time.stub(:now, t) do
@@ -23,16 +23,16 @@ class NotificationTest < ActiveSupport::TestCase
     end
   end
 
-  test '.actor_name' do
+  test ".actor_name" do
     note = create(:notification)
     assert_equal note.actor.name, note.actor_name
 
     note = create(:notification, actor: nil)
     assert_equal false, note.new_record?
-    assert_equal '', note.actor_name
+    assert_equal "", note.actor_name
   end
 
-  test '.actor_avatar_url' do
+  test ".actor_avatar_url" do
     note = create(:notification, actor: nil)
     assert_equal Notification::DEFAULT_AVATAR, note.actor_avatar_url
 
@@ -40,16 +40,16 @@ class NotificationTest < ActiveSupport::TestCase
     assert_equal Notification::DEFAULT_AVATAR, note.actor_avatar_url
 
     user = create(:user)
-    user.stub(:avatar_url, '123') do
+    user.stub(:avatar_url, "123") do
       Notifications.config.stub(:user_avatar_url_method, :avatar_url) do
         note.stub(:actor, user) do
-          assert_equal '123', note.actor_avatar_url
+          assert_equal "123", note.actor_avatar_url
         end
       end
     end
   end
 
-  test '.actor_profile_url' do
+  test ".actor_profile_url" do
     note = create(:notification, actor: nil)
     assert_nil note.actor_profile_url
 
@@ -59,7 +59,7 @@ class NotificationTest < ActiveSupport::TestCase
     end
   end
 
-  test '#unread_count' do
+  test "#unread_count" do
     user = create(:user)
     create(:notification)
     create_list(:notification, 2, user: user, read_at: Time.now)
@@ -67,7 +67,7 @@ class NotificationTest < ActiveSupport::TestCase
     assert_equal 3, Notification.unread_count(user)
   end
 
-  test '#read_count' do
+  test "#read_count" do
     user = create(:user)
     create(:notification)
     create_list(:notification, 2, user: user, read_at: Time.now)

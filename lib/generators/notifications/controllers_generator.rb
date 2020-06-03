@@ -1,8 +1,8 @@
-require 'rails/generators'
+require "rails/generators"
 module Notifications
   module Generators
     class ControllersGenerator < Rails::Generators::Base #:nodoc:
-      source_root File.expand_path('../../../app/controllers', __dir__)
+      source_root File.expand_path("../../../app/controllers", __dir__)
       desc "Used to copy Notifications's controllers to your application's controllers."
 
       def copy_controllers
