@@ -10,14 +10,9 @@ Mountable notifications for any Rails applications.
 
 ## Installation
 
-```ruby
-# Gemfile Rails ~> 5
-gem 'notifications', '~> 0.6.0'
-# Gemfile for Rails ~> 4.2
-gem 'notifications', '~> 0.5.0'
+```bash
+$ bundle add notifications
 ```
-
-And then run `bundle install`.
 
 You now have a notifications generator in your Rails application:
 
@@ -73,7 +68,7 @@ read_count = Notification.read_count(current_user)
 # for non-user class
 Notifications.config.user_class = 'Member'
 
-#or change 
+#or change
 
 Notifications.configure do
   # Class name of you User model, default: 'User'
