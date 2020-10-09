@@ -3,7 +3,7 @@ env:
   - USE_OFFICIAL_GEM_SOURCE=1
 
 services:
-  - mysql
+  - postgresql
 
 rvm:
   - 2.6
