@@ -1,3 +1,18 @@
+1.1.0
+-----
+
+- BreakChange `Notificaiton.read!` method now required user argument.
+
+```rb
+Notificaiton.read!(current_user, params[:ids])
+```
+
+- Add `POST /notifications/read` API for markup ids as read.
+
+```
+POST /notifications/read { ids: [] }
+```
+
 1.0.0
 -----
 
