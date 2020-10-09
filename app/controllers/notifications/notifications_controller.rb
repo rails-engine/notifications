@@ -4,9 +4,13 @@ module Notifications
       @notifications = notifications.includes(:actor).order("id desc").page(params[:page])
 
       unread_ids = @notifications.reject(&:read?).select(&:id)
-      Notification.read!(unread_ids)
+      Notification.read!(current_user, unread_ids)
 
       @notification_groups = @notifications.group_by { |note| note.created_at.to_date }
+    end
+
+    def read
+      Notification.read!(current_user, params[:ids])
     end
 
     def clean

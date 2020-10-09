@@ -10,10 +10,11 @@ class NotificationTest < ActiveSupport::TestCase
   end
 
   test "#read!" do
-    notes = create_list(:notification, 3)
+    user = create(:user)
+    notes = create_list(:notification, 3, user: user)
     t = Time.now
     Time.stub(:now, t) do
-      Notification.read!(notes.collect(&:id))
+      Notification.read!(user, notes.collect(&:id))
     end
     notes.each do |note|
       assert_equal false, note.read?

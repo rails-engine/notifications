@@ -38,9 +38,9 @@ module Notifications
     end
 
     module ClassMethods
-      def read!(ids = [])
+      def read!(user, ids = [])
         return if ids.blank?
-        Notification.where(id: ids).update_all(read_at: Time.now)
+        Notification.where(user: user, id: ids).update_all(read_at: Time.now)
       end
 
       def unread_count(user)
