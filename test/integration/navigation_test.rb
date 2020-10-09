@@ -50,6 +50,16 @@ class NavigationTest < ActionDispatch::IntegrationTest
     end
   end
 
+  test "POST /read" do
+    sign_in @current_user
+    notes = create_list(:notification, 3, user: @current_user)
+    post "/notifications/read", params: { ids: notes.collect(&:id) }
+    assert_response :success
+    notes.each do |note|
+      assert_equal true, note.reload.read?
+    end
+  end
+
   test "DELETE /clean without login" do
     delete "/notifications/clean"
     assert_required_user
