@@ -3,7 +3,7 @@ module Notifications
     def index
       @notifications = notifications.includes(:actor).order("id desc").page(params[:page])
 
-      unread_ids = @notifications.reject(&:read?).select(&:id)
+      unread_ids = @notifications.unread.ids
       Notification.read!(current_user, unread_ids)
 
       @notification_groups = @notifications.group_by { |note| note.created_at.to_date }
