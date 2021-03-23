@@ -2,11 +2,10 @@ module Notifications
   class NotificationsController < Notifications::ApplicationController
     def index
       @notifications = notifications.includes(:actor).order("id desc").page(params[:page])
+      @notification_groups = @notifications.group_by { |note| note.created_at.to_date }
 
       unread_ids = @notifications.unread.ids
       Notification.read!(current_user, unread_ids)
-
-      @notification_groups = @notifications.group_by { |note| note.created_at.to_date }
     end
 
     def read
